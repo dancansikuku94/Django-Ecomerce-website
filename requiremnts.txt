@@ -1,0 +1,5 @@
+django-rest_framework
+djoser
+stripe
+django-cors-headers
+pillow

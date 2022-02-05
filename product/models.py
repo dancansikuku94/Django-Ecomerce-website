@@ -4,7 +4,7 @@ from PIL import Image
 from django.core.files import File
 from django.db import models
 
-class Category(models.Model):
+class Category(models.Model):  # Category model
     name = models.CharField(max_length=255)
     slug = models.SlugField()
 
@@ -17,7 +17,7 @@ class Category(models.Model):
     def get_absolute_url(self):
         return f'/{self.slug}/'
 
-class Product(models.Model):
+class Product(models.Model): # Product model
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     slug = models.SlugField()
